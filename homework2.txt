@@ -1,0 +1,24 @@
+   0 mkdir -p /home/user/start && echo "Start" > /home/user/start/1.txt
+   1 date >> /home/user/start/1.txt 
+   2 mkdir /opt/task && cp /home/user/start/1.txt /opt/task/start.txt
+   3 nano
+   4 chmod +x script1.sh
+   5 ./script1.sh
+   6 cp -r /opt/task/ /tmp/testnew
+   7 cat readme.txt >> /tmp/testnew/start.txt
+   8 rm -r /opt/task
+   9 cat /tmp/testnew/start.txt 
+  10 history > homework2.txt
+
+Содержимое файла script1.txt
+
+#!/bin/bash
+for file in *; do
+cat $file | tail -4 >> /opt/task/start.txt
+done
+for file in .*; do
+if [ -f "$file" ]
+then
+cat $file | tail -4 >> /opt/task/start.txt
+fi
+done
