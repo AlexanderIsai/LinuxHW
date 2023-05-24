@@ -1,0 +1,32 @@
+﻿[ec2-user@ip-172-31-33-20 maier]$ cd ../isai
+[ec2-user@ip-172-31-33-20 isai]$ nano testscript.sh
+[ec2-user@ip-172-31-33-20 isai]$ ls
+testscript.sh
+[ec2-user@ip-172-31-33-20 isai]$ ls -l
+total 4
+-rw-rw-r-- 1 ec2-user ec2-user 137 May 24 19:30 testscript.sh
+[ec2-user@ip-172-31-33-20 isai]$ chmod u+x testscript.sh
+[ec2-user@ip-172-31-33-20 isai]$ ./testscript.sh
+your name is: ec2-user
+our working directory is: /opt/180423_evening/isai
+Number of users: 139
+done
+[ec2-user@ip-172-31-33-20 isai]$ chmod u-r testscript.sh
+[ec2-user@ip-172-31-33-20 isai]$ chmod -x testscript.sh
+[ec2-user@ip-172-31-33-20 isai]$ ls -l
+total 4
+--w-rw-r-- 1 ec2-user ec2-user 137 May 24 19:30 testscript.sh
+[ec2-user@ip-172-31-33-20 isai]$ mv testscript.sh .testscript.sh
+[ec2-user@ip-172-31-33-20 isai]$ ls
+[ec2-user@ip-172-31-33-20 isai]$ ls -a
+.  ..  .testscript.sh
+[ec2-user@ip-172-31-33-20 isai]$
+
+
+Содержимое testscript.sh
+
+ #!/bin/bash
+ echo "your name is: $USER"
+ echo "our working directory is: $PWD"
+ echo "Number of users: $(ps -ef | wc -l)"
+ echo  "done"
