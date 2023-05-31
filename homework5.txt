@@ -22,7 +22,7 @@ crontab: installing new crontab
 archive.tar.gz
 
 
-Содержимое файла script.sh
+РЎРѕРґРµСЂР¶РёРјРѕРµ С„Р°Р№Р»Р° script.sh
 
  #!/bin/bash
 
