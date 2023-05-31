@@ -1,0 +1,33 @@
+[ec2-user@ip-172-31-33-20 ~]$ cd /opt/180423_evening/
+[ec2-user@ip-172-31-33-20 180423_evening]$ ls
+akymenko  anton  chumak  Dumitru  elyadotsenko  isai  kechin  khodziuk  maier  pohasii  testscript.sh  Vorona
+[ec2-user@ip-172-31-33-20 180423_evening]$ cd isai
+[ec2-user@ip-172-31-33-20 isai]$ mkdir hw_archive
+[ec2-user@ip-172-31-33-20 isai]$ nano script.sh
+[ec2-user@ip-172-31-33-20 isai]$ ls
+hw_archive  output.txt  script78.sh  script.sh
+[ec2-user@ip-172-31-33-20 isai]$ chmod 744 script.sh
+[ec2-user@ip-172-31-33-20 isai]$ crontab -e
+crontab: installing new crontab
+[ec2-user@ip-172-31-33-20 isai]$ rm output.txt
+[ec2-user@ip-172-31-33-20 isai]$ ls
+1031.05.23.txt  231.05.23.txt  431.05.23.txt  631.05.23.txt  831.05.23.txt  hw_archive   script.sh
+131.05.23.txt   331.05.23.txt  531.05.23.txt  731.05.23.txt  931.05.23.txt  script78.sh
+[ec2-user@ip-172-31-33-20 isai]$ tar -czf /opt/180423_evening/isai/hw_archive/archive.tar.gz *.txt
+[ec2-user@ip-172-31-33-20 isai]$ ls
+1031.05.23.txt  231.05.23.txt  431.05.23.txt  631.05.23.txt  831.05.23.txt  hw_archive   script.sh
+131.05.23.txt   331.05.23.txt  531.05.23.txt  731.05.23.txt  931.05.23.txt  script78.sh
+[ec2-user@ip-172-31-33-20 isai]$ cd hw_archive/
+[ec2-user@ip-172-31-33-20 hw_archive]$ ls
+archive.tar.gz
+
+
+Содержимое файла script.sh
+
+ #!/bin/bash
+
+        for run in {1..10}
+        do
+        touch /opt/180423_evening/isai/$run$(date +'%d.%m.%y').txt
+        done
+
